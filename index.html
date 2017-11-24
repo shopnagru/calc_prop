@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/font.css">
+  </head>
+  <body>
+    <div class="container">
+
+      <h1>Калькулятор необходимой полосы пропускания</h1>
+      <p>С помощью этого калькулятора вы сможете примерно рассчитать необходимую скорость доступа в интернет. Или узнать, сколько времени потребуется на получение заданного объема информации при известной скорости.</p>
+
+      <br>
+
+      <div class="alert alert-success" id="res"></div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label for="usr">Объем передаваемой информации:</label>
+            <input type="text" class="form-control" id="hdd">
+          </div>
+          <div id="hdd_container"></div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label for="usr">Время, за которое информация должна быть передана:</label>
+            <input type="text" class="form-control" id="time">
+          </div>
+          <div id="time_container"></div>
+        </div>
+        <div class="col-lg-4">
+          <div class="form-group">
+            <label for="usr">Необходимая полоса пропускания:</label>
+            <input type="text" class="form-control" id="speed">
+          </div>
+          <div id="speed_container"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/backbone.js"></script>
+    <script src="js/main.js"></script>
+
+
+    <script type="text/template" id="li_tpl">
+      <ul class="list-group">
+        <% _.each( els , function( el ){ %>
+          <li class="list-group-item<% if(el.get('active')){%> active<%}%>" id="<%= el.cid %>"><%= el.escape('name') %></li>
+        <% }) %>
+      </ul>
+    </script>
+
+
+    <script type="text/template" id="res_tpl">
+      asasas
+    </script>
+
+
+  </body>
+
+</html>
